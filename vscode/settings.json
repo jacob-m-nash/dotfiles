@@ -1,0 +1,71 @@
+{
+    "workbench.startupEditor": "none",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.lineNumbers": "relative",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.smartRelativeLine": true,
+    "editor.cursorBlinking": "solid",
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+  {
+    "before": ["<C-c>"],
+    "commands": ["editor.action.hideSuggestWidget"]  // Dismiss autocomplete without leaving Insert mode
+  } 
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+    // Pane navigation
+    {
+        "before": ["<C-h>"],
+        "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+        "before": ["<C-l>"],
+        "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+        "before": ["<C-k>"],
+        "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+        "before": ["<C-j>"],
+        "commands": ["workbench.action.focusBelowGroup"]
+    },
+
+    // Splits
+    {
+        "before": ["<leader>", "s"],
+        "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+        "before": ["<leader>", "v"],
+        "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+        "before": ["<leader>", "c"],
+        "commands": ["workbench.action.closeActiveEditor"]
+    },
+
+    // File / explorer
+    {
+        "before": ["<leader>", "w"],
+        "commands": [":w"]
+    },
+    {
+        "before": ["<leader>", "q"],
+        "commands": [":q"]
+    },
+    {
+        "before": ["<leader>", "e"],
+        "commands": ["workbench.view.explorer"]
+    },
+    {
+        "before": ["<leader>", "t"],
+        "commands": ["workbench.action.showAllSymbols"]
+    }
+    ],
+    
+
+}
