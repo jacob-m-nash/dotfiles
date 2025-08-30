@@ -1,0 +1,4 @@
+# ~/.xprofile
+xrandr --output DP-5 --off
+xrandr --output DP-2 --primary --pos 0x0
+xrandr --output DP-0 --right-of DP-2
