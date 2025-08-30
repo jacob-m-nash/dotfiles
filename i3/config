@@ -1,5 +1,4 @@
 # i3 config file (v4)
-# Auto-generated then cleaned by hand for UK keyboard + Kitty + Rofi
 
 set $mod Mod4
 
@@ -11,10 +10,10 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
-# Disable TV output unless you enable it manually
+# Disable TV output 
 exec --no-startup-id xrandr --output DP-5 --off
 
-# Keep fav workspaces on the intended screens
+# Keep workspaces on the intended screens
 workspace $ws1 output DP-2
 workspace $ws2 output DP-0
 
