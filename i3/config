@@ -18,12 +18,14 @@ workspace $ws1 output DP-2
 workspace $ws2 output DP-0
 
 
-# Mouse modifier
+# Mouse 
 floating_modifier $mod
+mouse_warping none
 
 # Terminal + Launcher
 bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+f exec firefox
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -51,7 +53,7 @@ bindsym $mod+Shift+Right move right
 # Splits + layouts
 bindsym $mod+z split h
 bindsym $mod+v split v
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
