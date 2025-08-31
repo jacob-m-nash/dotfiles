@@ -26,6 +26,7 @@ mouse_warping none
 bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f exec firefox
+bindsym $mod+c exec code /home/jacob/default.code-workspace
 
 # Kill focused window
 bindsym $mod+Shift+q kill
