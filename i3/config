@@ -4,21 +4,41 @@ set $mod Mod4
 
 # Font (required in v4)
 font pango:monospace 10
+# Theme
+# Kanagawa colors
+set $bg         #1F1F28
+set $bg_dark    #16161D
+set $fg         #DCD7BA
+set $blue       #7E9CD8
+set $gray       #727169
+set $red        #E82424
+set $pink       #E46876
+set $green      #98BB6C
+set $yellow     #E6C384
+
+# Window colors
+# class                 border    backgr.  text  indicator child_border
+client.focused          $blue     $bg      $fg   $blue     $blue
+client.focused_inactive $gray     $bg      $fg   $gray     $gray
+client.unfocused        $bg_dark  $bg      $gray $bg_dark  $bg_dark
+client.urgent           $red      $red     $fg   $red      $red
+client.placeholder      $bg       $bg      $fg   $bg       $bg
+
+client.background       $bg
+
 
 # Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-
+exec --no-startup-id xrandr --output DP-4 --auto --primary --output DP-2 --auto --right-of DP-4
 # Disable TV output 
 exec --no-startup-id xrandr --output DP-5 --off
 
 # Keep workspaces on the intended screens
-workspace $ws1 output DP-2
-workspace $ws2 output DP-0
-
-
-# Mouse 
+workspace 1 output DP-4
+workspace 2 output DP-2
+# Mouse
 floating_modifier $mod
 mouse_warping none
 
@@ -127,5 +147,32 @@ bindsym $mod+r mode "resize"
 
 # Bar
 bar {
+    output primary
     status_command i3status
+    tray_output primary
+    colors {
+        background $bg
+        statusline $fg
+        separator  $gray
+        focused_workspace  $blue $blue $bg
+        active_workspace   $gray $bg   $fg
+        inactive_workspace $bg   $bg   $gray
+        urgent_workspace   $red  $red  $fg
+        binding_mode       $pink $pink $bg
+    }
+}
+
+bar {
+    output DP-2
+    tray_output none
+    colors {
+        background $bg
+        statusline $fg
+        separator  $gray
+        focused_workspace  $blue $blue $bg
+        active_workspace   $gray $bg   $fg
+        inactive_workspace $bg   $bg   $gray
+        urgent_workspace   $red  $red  $fg
+        binding_mode       $pink $pink $bg
+    }
 }
