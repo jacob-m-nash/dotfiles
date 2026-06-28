@@ -1,0 +1,3 @@
+bleopt highlight_syntax=
+bleopt exec_errexit_mark=
+ble-face auto_complete='fg=8'
