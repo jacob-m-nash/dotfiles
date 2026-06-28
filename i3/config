@@ -18,7 +18,7 @@ set $yellow     #E6C384
 
 # Window colors
 # class                 border    backgr.  text  indicator child_border
-client.focused          $blue     $bg      $fg   $blue     $blue
+client.focused          $yellow   $bg      $fg   $yellow   $yellow
 client.focused_inactive $gray     $bg      $fg   $gray     $gray
 client.unfocused        $bg_dark  $bg      $gray $bg_dark  $bg_dark
 client.urgent           $red      $red     $fg   $red      $red
@@ -37,7 +37,16 @@ exec --no-startup-id xrandr --output DP-5 --off
 
 # Keep workspaces on the intended screens
 workspace 1 output DP-4
-workspace 2 output DP-2
+workspace 2 output DP-4
+workspace 3 output DP-4
+workspace 4 output DP-4
+workspace 5 output DP-4
+workspace 6 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-2
+workspace 0 output DP-2
+
 # Mouse
 floating_modifier $mod
 mouse_warping none
@@ -46,8 +55,15 @@ mouse_warping none
 bindsym $mod+Return exec kitty
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f exec firefox
-bindsym $mod+c exec code /home/jacob/default.code-workspace
+# bindsym $mod+c exec code /home/jacob/default.code-workspace
+bindsym $mod+e mode "explorer"
 
+mode "explorer" {
+    bindsym d exec thunar ~/Downloads; mode "default"
+    bindsym h exec thunar ~; mode "default"
+    bindsym c exec thunar ~/code; mode "default"
+    bindsym Escape mode "default"
+}
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -75,9 +91,9 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+z split h
 bindsym $mod+v split v
 bindsym $mod+Shift+f fullscreen toggle
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # Floating controls
 bindsym $mod+Shift+space floating toggle
@@ -120,6 +136,19 @@ bindcode $mod+Shift+17 move container to workspace number $ws8
 bindcode $mod+Shift+18 move container to workspace number $ws9
 bindcode $mod+Shift+19 move container to workspace number $ws10
 
+# bindsym $mod+s mode "scratchpad"
+#
+# mode "scratchpad" {
+#     bindsym m [class="Spotify"] scratchpad show; mode "default"
+#     bindsym Return [con_mark="term"] scratchpad show; mode "default"
+#     bindsym c [con_mark="calc"] scratchpad show; mode "default"
+#
+#     bindsym Escape mode "default"
+#     bindsym $mod+s mode "default"
+# }
+#
+# # Hide any visible scratchpad
+# bindsym $mod+q move scratchpad
 # Config lifecycle
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
