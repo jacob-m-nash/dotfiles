@@ -31,6 +31,7 @@ client.background       $bg
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id flameshot
 exec --no-startup-id xrandr --output DP-4 --auto --primary --output DP-2 --auto --right-of DP-4
 # Disable TV output 
 exec --no-startup-id xrandr --output DP-5 --off
@@ -50,6 +51,12 @@ workspace 0 output DP-2
 # Mouse
 floating_modifier $mod
 mouse_warping none
+
+# flameshot
+bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+
+# Obsidian
+bindsym $mod+o exec --no-startup-id obsidian
 
 # Terminal + Launcher
 bindsym $mod+Return exec kitty
