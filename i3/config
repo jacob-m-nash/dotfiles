@@ -28,6 +28,7 @@ client.background       $bg
 
 
 # Autostart
+exec_always --no-startup-id ~/code/dotfiles/i3/center-single.py
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -50,7 +51,6 @@ workspace 0 output DP-2
 
 # Mouse
 floating_modifier $mod
-mouse_warping none
 
 # flameshot
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
