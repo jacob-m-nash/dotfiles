@@ -3,7 +3,7 @@ from i3ipc import Connection, Event
 
 V_GAP = 25
 FRACTION = 0.618  # golden ratio
-EXCLUDED = {"firefox"}  # classes that stay full width (substring match)
+EXCLUDED = {"firefox", "gimp"}  # classes that stay full width (substring match)
 
 i3 = Connection()
 last_gap = {}  # workspace name -> last gap we set
