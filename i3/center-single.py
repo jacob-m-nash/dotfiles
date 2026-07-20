@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from i3ipc import Connection, Event
 
+V_GAP = 25
 FRACTION = 0.618  # golden ratio
 EXCLUDED = {"firefox"}  # classes that stay full width (substring match)
 
@@ -35,9 +36,11 @@ def update(i3, e=None):
         if not any(x in cls for x in EXCLUDED):
             gap = int(output_width(i3, ws) * (1 - FRACTION) / 2)
 
+    v_gap = V_GAP if gap else 0
     if last_gap.get(ws.name) != gap:
         last_gap[ws.name] = gap
         i3.command(f"gaps horizontal current set {gap}")
+        i3.command(f"gaps vertical current set {v_gap}")
 
 
 for ev in (
