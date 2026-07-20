@@ -10,3 +10,5 @@ eval "$(starship init bash)"
 
 bleopt_import_path=~/.blerc
 source -- ~/ble.sh/out/ble.sh
+
+export PATH="/usr/local/texlive/2026/bin/x86_64-linux:$PATH"
